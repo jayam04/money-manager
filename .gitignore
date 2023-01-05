@@ -54,8 +54,6 @@ unshared/*
 .idea/*
 
 # firebase
-.firebaserc
-.firebase/*
 # Logs
 logs
 *.log
