@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactDOM } from "react";
 import Credits from './Credits.js'
 
 function Footer() {
