@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Button } from '@chakra-ui/react';
-import Footer from "./footer/Footer.js";
+import Footer from "./footer/footer.js";
 
 // from old file
 import './index.sass';
@@ -17,9 +16,6 @@ root.render(
     <span className='mdc-button__focus-ring'></span>
       hello
     </button>
-    <Button colorScheme='teal'>
-        Button
-    </Button>
     <Footer />
   </React.StrictMode>
 );
