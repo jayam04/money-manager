@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Footer from "./footer/footer.js";
+import Footer from "./components/footer.js";
 
 // from old file
 import './index.sass';
