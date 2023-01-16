@@ -1,13 +1,16 @@
 import React from "react";
 
 import Wallet from "../components/Wallet";
+import "./Dashboard.sass";
 
 function Dashboard() {
     return(
         <React.StrictMode>
             <h1>Dashboard</h1>
-            <Wallet />
-            <Wallet />
+            <div className="dashboard_main">
+                <Wallet />
+                <Wallet />
+            </div>
         </React.StrictMode>
         
     );
