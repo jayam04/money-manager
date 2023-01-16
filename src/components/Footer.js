@@ -1,13 +1,13 @@
 import React from "react";
 import { UilGithubAlt } from "@iconscout/react-unicons";
-import "./footer.sass";
+import "./Footer.sass";
 
 function Footer() {
   return (
     <div className="main">
       {/* reachus */}
       <div className="reachus">
-        <a href="https://github.com/jayam04/monymngr">
+        <a href="https://github.com/jayam04/monymngr-web">
           <UilGithubAlt size="20" />
         </a>
       </div>
@@ -28,6 +28,9 @@ function Footer() {
           </p>
         </div>
       </div>
+
+      {/* about us */}
+      <a href="/about" className="reach_us">about us</a>
     </div>
   );
 }
