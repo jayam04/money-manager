@@ -1,10 +1,7 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
+  RouterProvider
 } from "react-router-dom";
 
 import Home from "./containers/Home/HomePage";
