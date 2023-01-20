@@ -10,6 +10,7 @@ import {
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
+import Authentication from "./components/authentication/Authentication";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "auth",
+    element: <Authentication />
   },
 ]);
 
