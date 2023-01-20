@@ -4,7 +4,7 @@ import "./Footer.sass";
 
 function Footer() {
   return (
-    <div className="main">
+    <div className="footer">
       {/* reachus */}
       <div className="reachus">
         <a href="https://github.com/jayam04/monymngr-web">

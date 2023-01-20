@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Footer from "../../components/Home/Footer";
+import NavigationBar from '../../components/Home/Navigation/NavigationBar';
+import Footer from "../../components/Home/Footer/Footer";
 
 
 function Home() {
     return (
         <React.StrictMode>
-            <a href='/dashboard'>dashboard</a>
-            <a href='/about'>About</a>
-            <a href='/auth'>Login / Signup</a>
+
+            <NavigationBar />
             <Footer />
 
         </React.StrictMode>
