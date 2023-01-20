@@ -1,24 +1,27 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
+import firebaseConfig from "../js/authentication/firebase.app.test"
+
 
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCNDZnKFgve9y9WzbsGJtodDqTwH3OBv8Y",
-  authDomain: "monymngr.firebaseapp.com",
-  databaseURL: "https://monymngr-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "monymngr",
-  storageBucket: "monymngr.appspot.com",
-  messagingSenderId: "223749319252",
-  appId: "1:223749319252:web:34084eb67970bb2d671bc1"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCNDZnKFgve9y9WzbsGJtodDqTwH3OBv8Y",
+//   authDomain: "monymngr.firebaseapp.com",
+//   databaseURL: "https://monymngr-default-rtdb.europe-west1.firebasedatabase.app",
+//   projectId: "monymngr",
+//   storageBucket: "monymngr.appspot.com",
+//   messagingSenderId: "223749319252",
+//   appId: "1:223749319252:web:34084eb67970bb2d671bc1"
+// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+console.log(firebaseConfig)
 
 // // TODO: Replace the following with your app's Firebase project configuration
 // // See: https://firebase.google.com/docs/web/learn-more#config-object
