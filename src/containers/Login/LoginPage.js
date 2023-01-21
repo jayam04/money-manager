@@ -30,9 +30,13 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+
     // const [user, setUser] = useState(null);
     
-    /*
+   
+    const [user, setUser] = useState(null);
+    
+/*
     onAuthStateChanged(auth, (user) => {
 
         if (user) {
@@ -47,7 +51,10 @@ function Login() {
             //...
         }
         });
+
         */
+
+
 
     function handleSubmit() {
         
@@ -80,12 +87,20 @@ function Login() {
     return (
         <React.StrictMode>
             <h1>Auth</h1>
+
             /*<h2>
+
+
+
                 {user
                     ? `${user.displayName}, you are signed and can visit dashboard`
                     : 'Please sign in'
                 }
+
             </h2> */
+
+
+
             <div>
             <h4>Login</h4>
             <label>
