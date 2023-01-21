@@ -6,8 +6,8 @@ import {
 
 import Home from "./containers/Home/HomePage";
 // import About from "./pages/About";
-// import Dashboard from "./pages/Dashboard";
-// import Login from "./pages/Login";
+import Dashboard from "./containers/Dashboard/Dashboard";
+import Login from "./containers/Login/LoginPage";
 
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
         },
         {
           path: "dashboard",
-          element: <div>Dashboard</div>,
+          element: <Dashboard />,
         },
         {
           path: "auth",
-          element: <div>Auth</div>,
+          element: <Login />,
         },
     ]);
 
