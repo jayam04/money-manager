@@ -1,18 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-
-import { signInWithEmailAndPassword } from "firebase/auth";
-
-import firebaseConfig from "../../config/firebase/app.auth"
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router";
+
+import { auth } from "../../config/firebase/firebase.config";
 
 
 function Login() {
-    console.log(firebaseConfig)
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
 
     const navigate = useNavigate();
 
@@ -26,17 +20,15 @@ function Login() {
     //     const errorCode = error.code;
     //     const errorMessage = error.message;
     //     // ..
-    // });        
+    // });
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
-
-    // const [user, setUser] = useState(null);
-    
+    const [error, setError] = useState(null);    
    
     const [user, setUser] = useState(null);
     
-/*
+
     onAuthStateChanged(auth, (user) => {
 
         if (user) {
@@ -48,14 +40,10 @@ function Login() {
             // user is signed out
             setUser(null)
             //redirect to auth page
-            //...
         }
-        });
+    });
 
-        */
-
-
-
+        
     function handleSubmit() {
         
         signInWithEmailAndPassword(auth, email, password)
@@ -88,18 +76,12 @@ function Login() {
         <React.StrictMode>
             <h1>Auth</h1>
 
-            /*<h2>
-
-
-
+            <h2>
                 {user
                     ? `${user.displayName}, you are signed and can visit dashboard`
                     : 'Please sign in'
                 }
-
-            </h2> */
-
-
+            </h2>
 
             <div>
             <h4>Login</h4>
@@ -114,7 +96,6 @@ function Login() {
             </label>
             <br />
             <button onClick={handleSubmit}>Log in</button>
-            {error && <p>{error}</p>}
             </div>
 
         </React.StrictMode>
