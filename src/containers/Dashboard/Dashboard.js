@@ -16,22 +16,20 @@ function Dashboard() {
     const navigate = useNavigate();
 
     onAuthStateChanged(auth, (user) => {
-
-    if (user) {
-        // user is signed in, see docs for a list of available properties
-        const uid = user.uid;
-        console.log(uid)
-        setUser(user)
-    } else {
-        // user is signed out
-        setUser(null)
-        //redirect to auth page
-        navigate("/auth")
-        //...
-    }
+        if (user) {
+            // user is signed in, see docs for a list of available properties
+            const uid = user.uid;
+            console.log(uid)
+            setUser(user)
+        } else {
+            // user is signed out
+            setUser(null)
+            //redirect to auth page
+            navigate("/auth")
+        }
     });
 
-
+    console.log(user)
 
     return (
         <React.StrictMode>
