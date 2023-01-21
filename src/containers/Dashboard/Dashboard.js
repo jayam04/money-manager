@@ -11,7 +11,6 @@ function Dashboard() {
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app);
 
-
     const [user, setUser] = useState(null);
     
     const navigate = useNavigate();
@@ -28,6 +27,7 @@ function Dashboard() {
         setUser(null)
         //redirect to auth page
         navigate("/auth")
+        //...
     }
     });
 
@@ -35,14 +35,7 @@ function Dashboard() {
 
     return (
         <React.StrictMode>
-            <h1>Dashboard</h1>
-            <p>
-            {!user
-                ? "Who are you?"
-                : `Hello! ${user.displayName}`}
-            </p>
             <NavigationBar />
-
         </React.StrictMode>
     )
 }
