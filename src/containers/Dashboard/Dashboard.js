@@ -4,14 +4,18 @@ import { initializeApp } from "firebase/app";
 import firebaseConfig from "../../config/firebase/app.auth";
 import { useNavigate } from "react-router-dom";
 
+
+
 function Dashboard() {
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app);
 
     const [user, setuser] = useState(null);
     
+    const navigate = useNavigate();
 
     onAuthStateChanged(auth, (user) => {
+
     if (user) {
         // user is signed in, see docs for a list of available properties
         const uid = user.uid;
@@ -19,10 +23,13 @@ function Dashboard() {
         setuser(user)
         // ...
     } else {
-        naviga
+        // user is signed out
+        setuser(null)
+        //redirect to auth page
+        navigate("/auth")
+        //...
     }
-    }
-);
+    });
 
 
 
