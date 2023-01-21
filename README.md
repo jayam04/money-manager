@@ -1,2 +1,4 @@
-# monymngr
-your finance tracker
+# monymngr-web
+your finance tracker  
+
+## updates
