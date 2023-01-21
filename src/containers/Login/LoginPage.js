@@ -1,17 +1,20 @@
 import React, { StrictMode } from "react";
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 import firebaseConfig from "../../config/firebase/app.auth"
+import { useNavigate } from "react-router";
 
 
 function Login() {
     console.log(firebaseConfig)
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+
+    const navigate = useNavigate();
 
     // createUserWithEmailAndPassword(auth, email, password)
     // .then((userCredential) => {
@@ -27,7 +30,23 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+    const [user, setUser] = useState(null);
     
+    onAuthStateChanged(auth, (user) => {
+
+        if (user) {
+            // user is signed in, see docs for a list of available properties
+            const uid = user.uid;
+            console.log(uid);
+            setUser(user);
+        } else {
+            // user is signed out
+            setUser(null)
+            //redirect to auth page
+            //...
+        }
+        });
+
     function handleSubmit() {
         
         signInWithEmailAndPassword(auth, email, password)
@@ -36,6 +55,8 @@ function Login() {
             const user = userCredential.user;
             console.log(`Signed In - ${user}`);
             console.log(user)
+
+            navigate('/dashboard')
           })
         .catch((error) => {
             const errorCode = error.code;
@@ -55,7 +76,14 @@ function Login() {
     return (
         <React.StrictMode>
             <h1>Auth</h1>
+            <h2>
+                {user
+                    ? `${user.displayName}, you are signed and can visit dashboard`
+                    : 'Please sign in'
+                }
+            </h2>
             <div>
+            <h4>Login</h4>
             <label>
                 Email:
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} />

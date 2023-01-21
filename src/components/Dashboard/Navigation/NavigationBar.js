@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { useNavigate } from "react-router-dom";
+import { UilUser } from '@iconscout/react-unicons'
+import { Space } from "antd";
 
-import firebaseConfig from "../../config/firebase/app.auth";
-import NavigationBar from "../../components/Dashboard/Navigation/NavigationBar";
+import "./NavigationBar.sass"
+import firebaseConfig from "../../../config/firebase/app.auth";
+import { useNavigate } from "react-router";
 
 
-function Dashboard() {
+function NavigationBar() {
     const app = initializeApp(firebaseConfig)
     const auth = getAuth(app);
 
     const [user, setUser] = useState(null);
     
-    const navigate = useNavigate();
 
     onAuthStateChanged(auth, (user) => {
 
@@ -30,20 +31,21 @@ function Dashboard() {
     }
     });
 
-
-
     return (
         <React.StrictMode>
-            <h1>Dashboard</h1>
-            <p>
-            {!user
-                ? "Who are you?"
-                : `Hello! ${user.displayName}`}
-            </p>
-            <NavigationBar />
-
+            <div className="dash_navigation">
+                <Space>
+                    <h3>Dashboard</h3>
+                    <div className="dash_navigation_loginbutton">
+                        <Space>
+                            <UilUser />
+                            <h4>{user.displayName}</h4>
+                        </Space>
+                    </div>
+                </Space>
+            </div>
         </React.StrictMode>
     )
 }
 
-export default Dashboard;
+export default NavigationBar;
