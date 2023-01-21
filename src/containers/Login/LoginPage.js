@@ -1,9 +1,9 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 import firebaseConfig from "../../config/firebase/app.auth"
 import { useNavigate } from "react-router";
@@ -61,6 +61,8 @@ function Login() {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+
+            setError(error)
 
             console.log(errorCode, errorMessage)
 
