@@ -14,6 +14,8 @@ function NavigationBar() {
     const auth = getAuth(app);
 
     const [user, setUser] = useState(null);
+
+    const navigate = useNavigate();
     
 
     onAuthStateChanged(auth, (user) => {
