@@ -29,7 +29,22 @@ function NavigationBar(title) {
     return (
         <React.StrictMode>
             <div className="dash_navigation">
-                <Space className="dash_navigation_space">
+                <div className="dash_navigation_title">
+                    <a href="/"><img src="./favicon.ico"></img></a>
+                    <h3>{title}</h3>
+                </div>
+
+                <div className="dash_navigation_login">
+                    <UilUser />
+                    <h4>
+                    {user
+                        ? user.displayName
+                        : 'PLEASE LOGIN!'
+                    }
+                    </h4>
+                </div>
+
+                {/* <Space className="dash_navigation_space">
                 
                     <Space>
                         <h3 className="dash_navigation_space_title">{title}</h3>
@@ -50,7 +65,7 @@ function NavigationBar(title) {
                         </div>
                     </Space>
 
-                </Space>
+                </Space> */}
             </div>
         </React.StrictMode>
     )
