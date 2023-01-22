@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import { UilUser } from '@iconscout/react-unicons'
 import { Space } from "antd";
 
 import "./NavigationBar.sass"
 import { auth } from "../../../config/firebase/firebase.config";
 
-
-function NavigationBar() {
+function NavigationBar(title) {
     const [user, setUser] = useState(null);
-    const navigate = useNavigate();
+    const [error, setError] = useState(null);
+
+    // const navigate = useNavigate();
+    
+    
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
             } else {
-                setUser(null)
-                navigate("/auth")
+                setError(error)
             }
         });
       }, []);
@@ -26,7 +29,7 @@ function NavigationBar() {
         <React.StrictMode>
             <div className="dash_navigation">
                 <Space>
-                    <h3>Dashboard</h3>
+                    <h3>{title}</h3>
                     <div className="dash_navigation_loginbutton">
                         <Space>
                             <UilUser />
@@ -34,7 +37,7 @@ function NavigationBar() {
                             <h4>
                                 {user
                                     ? user.displayName
-                                    : 'Loading'
+                                    : 'PLEASE LOGIN!'
                                 }
                             </h4>
                         </Space>
