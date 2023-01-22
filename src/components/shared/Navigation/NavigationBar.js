@@ -20,6 +20,7 @@ function NavigationBar(title) {
             if (user) {
                 setUser(user)
             } else {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 setError(error)
             }
         });

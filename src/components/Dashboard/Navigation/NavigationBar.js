@@ -16,6 +16,7 @@ function NavigationBar() {
             if (user) {
                 setUser(user)
             } else {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 setUser(null)
                 navigate("/auth")
             }

@@ -29,6 +29,7 @@ function Login() {
                 console.log(uid);
                 setUser(user);
             } else {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 // user is signed out
                 setError(error);
                 console.log(error)
