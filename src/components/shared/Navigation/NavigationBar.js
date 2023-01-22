@@ -29,20 +29,27 @@ function NavigationBar(title) {
     return (
         <React.StrictMode>
             <div className="dash_navigation">
-                <Space>
-                    <h3>{title}</h3>
-                    <div className="dash_navigation_loginbutton">
-                        <Space>
-                            <UilUser />
-                                
-                            <h4>
-                                {user
-                                    ? user.displayName
-                                    : 'PLEASE LOGIN!'
-                                }
-                            </h4>
-                        </Space>
-                    </div>
+                <Space className="dash_navigation_space">
+                
+                    <Space>
+                        <h3 className="dash_navigation_space_title">{title}</h3>
+                    </Space>
+
+                    <Space>
+                        <div className="dash_navigation_space_login">
+                            <Space>
+                                <UilUser />
+                                    
+                                <h3>
+                                    {user
+                                        ? user.displayName
+                                        : 'PLEASE LOGIN!'
+                                    }
+                                </h3>
+                            </Space>
+                        </div>
+                    </Space>
+
                 </Space>
             </div>
         </React.StrictMode>

@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
 import firebaseConfig from "../../config/firebase/app.auth";
-import NavigationBar from "../../components/Dashboard/Navigation/NavigationBar";
+import NavigationBar from "../../components/shared/Navigation/NavigationBar";
 
 function Dashboard() {
     const app = initializeApp(firebaseConfig);
@@ -34,7 +34,7 @@ function Dashboard() {
 
     return (
         <React.StrictMode>
-            <NavigationBar />
+            {NavigationBar('Dashboard')}
         </React.StrictMode>
     );
 }
