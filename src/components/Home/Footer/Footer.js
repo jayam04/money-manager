@@ -1,6 +1,7 @@
 import React from "react";
 import { UilGithubAlt } from "@iconscout/react-unicons";
 import "./Footer.sass";
+import PaypalDonationButton from "../../shared/Buttons/PaypalDonation";
 
 function Footer() {
   return (
@@ -31,6 +32,10 @@ function Footer() {
 
       {/* about us */}
       <a href="/about" className="reach_us">about us</a>
+
+      <br></br>
+
+      <PaypalDonationButton />
     </div>
   );
 }
