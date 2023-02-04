@@ -9,7 +9,7 @@ import Home from "./containers/Home/HomePage";
 // import About from "./pages/About";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Login from "./containers/Login/LoginPage";
-import Navigation from "./src/components/shared/newNavigation/Navigation";
+import Navigation from "./components/shared/newNavigation/Navigation";
 import error404 from "./error-404";
 import "./App.sass"
 
