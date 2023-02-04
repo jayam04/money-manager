@@ -28,7 +28,7 @@
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "sass": "^1.57.1",
-    "serve": "^14.1.2",
+    "serve": "^14.2.0",
     "server": "^1.0.38",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
