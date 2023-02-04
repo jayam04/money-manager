@@ -4,8 +4,8 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
 import firebaseConfig from "../../config/firebase/app.auth";
-import NavigationBar from "../../components/shared/Navigation/NavigationBar";
-import Account from "../../components/shared/Account/Account";
+import NavigationBar from "../../components/shared/navigation_bar/NavigationBar";
+import Account from "../../components/widget_current_balance/Account";
 
 import { UilWallet } from '@iconscout/react-unicons'
 

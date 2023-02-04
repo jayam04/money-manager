@@ -1,7 +1,7 @@
 import React from "react";
 import { UilGithubAlt } from "@iconscout/react-unicons";
 import "./Footer.sass";
-import PaypalDonationButton from "../../shared/Buttons/PaypalDonation";
+import PaypalDonationButton from "../../components/shared/buttons/PaypalDonation";
 
 function Footer() {
   return (

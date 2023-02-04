@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function error404() {
+function Error404() {
     return (
         <React.StrictMode>
             <h1>404 error, webpage not found!</h1>
@@ -10,4 +10,4 @@ function error404() {
     )
 }
 
-export default error404;
+export default Error404;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MailOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { Navigate, useNavigate, useNavigation } from 'react-router';
+import { useNavigate } from 'react-router';
 
 // function Navigation() {
 //     return (
@@ -54,7 +54,7 @@ const items = [
 ]
 
 
-const Navigation = () => {
+const NavigationMenu = () => {
 
   const navigate = useNavigate()
 
@@ -79,4 +79,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation
+export default NavigationMenu

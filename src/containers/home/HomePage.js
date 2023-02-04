@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavigationBar from '../../components/shared/Navigation/NavigationBar';
-import Footer from "../../components/Home/Footer/Footer";
+import NavigationBar from '../../components/shared/navigation_bar/NavigationBar';
+import Footer from "./Footer";
 
 
 function Home() {
