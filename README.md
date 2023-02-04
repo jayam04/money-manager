@@ -29,7 +29,8 @@ your finance tracker
 
 - [ ] better file structure and naming  
 
-- [*] old pages not showing (update link in nav_menu for 'oa' and 'od')  
+- [x] old pages not showing (update link in nav_menu for 'oa' and 'od')  
+- [ ] fix old dashboard redirectiong to /auth instead /oa
 
 - [ ] toggable menu for mobile website (smaller screen)  
 
