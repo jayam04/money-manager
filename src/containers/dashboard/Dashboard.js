@@ -4,12 +4,13 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
 import firebaseConfig from "../../config/firebase/app.auth";
-import NavigationBar from "../../components/shared/navigation_bar/NavigationBar";
-import Account from "../../components/widget_current_balance/Account";
+
+import NavigationBar from "../../components/navigation-bar/NavigationBar";
+import Account from "../../components/widget-current-balance/Account";
 
 import { UilWallet } from '@iconscout/react-unicons'
 
-function Dashboard() {
+function DashboardV1() {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
@@ -28,7 +29,8 @@ function Dashboard() {
                 // user is signed out
                 setUser(null);
                 //redirect to auth page
-                navigate("/auth");
+
+                navigate("/oa");
             }
         });
     });
@@ -55,4 +57,5 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+
+export default DashboardV1;

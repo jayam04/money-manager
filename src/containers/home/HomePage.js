@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavigationBar from '../../components/shared/navigation_bar/NavigationBar';
+import NavigationBar from '../../components/navigation-bar/NavigationBar';
 import Footer from "./Footer";
 
 

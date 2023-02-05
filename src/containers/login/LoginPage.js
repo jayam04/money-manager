@@ -13,7 +13,8 @@ import { Button } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 
 import { auth } from "../../config/firebase/firebase.config";
-import NavigationBar from "../../components/shared/navigation_bar/NavigationBar";
+
+import NavigationBar from "../../components/navigation-bar/NavigationBar";
 
 function Login() {
     const navigate = useNavigate();
