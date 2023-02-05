@@ -1,4 +1,5 @@
 import React from "react";
+
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import Home from "./containers/home/HomePage";
@@ -55,10 +56,12 @@ function AppLayout() {
 function App() {
     const router = createBrowserRouter([
         {
+
             element: <AppLayout />,
             children: routes,
             errorElement: <Error404 />,
         },
+        
     ]);
 
     return <RouterProvider router={router} />;

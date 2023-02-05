@@ -4,6 +4,7 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 
 import firebaseConfig from "../../config/firebase/app.auth";
+
 import NavigationBar from "../../components/navigation-bar/NavigationBar";
 import Account from "../../components/widget-current-balance/Account";
 
@@ -28,6 +29,7 @@ function DashboardV1() {
                 // user is signed out
                 setUser(null);
                 //redirect to auth page
+
                 navigate("/oa");
             }
         });
@@ -54,5 +56,6 @@ function DashboardV1() {
         </React.StrictMode>
     );
 }
+
 
 export default DashboardV1;
