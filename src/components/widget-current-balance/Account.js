@@ -5,7 +5,7 @@ let listOfCurrency = null;
 
 async function fetchCurrency() {
     const response = await fetch(
-        "https://json-adventure.vercel.app/currencies/basic.json",
+        "https://json-adventure.vercel.app/api/currencies/basic.json",
         { cache: "reload" }
     )
         .then((response) => response.json())
