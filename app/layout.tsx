@@ -1,4 +1,6 @@
 import Navmenu from "../components/navmenu"
+import { AnalyticsWrapper } from './components/analytics';
+
 import "./layout.sass"
 import Warning from "../components/development"
 
@@ -24,6 +26,10 @@ export default function RootLayout({ children }: {
                     {children}
                 </div>
             </div>
+
+
+            <AnalyticsWrapper />
+
         </body>
       </html>
     );
