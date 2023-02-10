@@ -1,4 +1,4 @@
-# monymngr-web
+# [monymngr-web](https://monymngr.vercel.app)
 
 your finance tracker
 
@@ -18,8 +18,8 @@ your finance tracker
 ## fixes
 
 - [ ] better navigation bar  
-    - [ ] remove old things  
-    - [ ] fix alignment of title  
+  - [ ] remove old things  
+  - [ ] fix alignment of title  
 
 - [ ] connect database  
 
