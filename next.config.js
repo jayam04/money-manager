@@ -6,7 +6,7 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-\
+
 rewrites: async () => [
   {
     source: "/public/myfile.html",
