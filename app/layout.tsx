@@ -1,5 +1,8 @@
 import Navmenu from "../components/navmenu"
 import "./layout.sass"
+import Warning from "../components/development"
+
+const devlopmentStatus = true
 
 export default function RootLayout({ children }: {
     children: React.ReactNode;
@@ -8,6 +11,10 @@ export default function RootLayout({ children }: {
       <html lang="en-US">
         <head />
         <body>
+            {devlopmentStatus
+                ? <Warning />
+                : <></>
+            }
             <div className="root">
                 <div className="root_sidebar">
                     {/* <Navmenu /> */}

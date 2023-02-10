@@ -1,5 +1,10 @@
+@import './variables'
+
+*
+    font-family: $default-font
+
+
 body
-    border: 2px solid black
     border-radius: 10px
 
 .root
@@ -15,7 +20,9 @@ body
     &_sidebar
         background-color: #eeeeee
         
-        border-right: 1px solid black 
+        border: 2px solid black
+        border-right: 1px solid black
+
         border-radius: 10px 0 0 10px
 
         width: 20%
@@ -26,5 +33,6 @@ body
         width: max(80%, 100% - 300px)
         padding: 15px
 
+        border: 2px solid black
         border-left: 1px solid black
         border-radius: 0 10px 10px 0
