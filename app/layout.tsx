@@ -1,8 +1,10 @@
+import { AnalyticsWrapper } from '../components/analytics';
 import Navmenu from "../components/navmenu"
-import { AnalyticsWrapper } from './components/analytics';
+import Warning from "../components/development"
 
 import "./layout.sass"
-import Warning from "../components/development"
+
+
 
 const devlopmentStatus = true
 
@@ -19,8 +21,7 @@ export default function RootLayout({ children }: {
             }
             <div className="root">
                 <div className="root_sidebar">
-                    {/* <Navmenu /> */}
-                    <h1>navigation</h1>
+                    <Navmenu />
                 </div>
                 <div className="root_children">
                     {children}
@@ -29,7 +30,6 @@ export default function RootLayout({ children }: {
 
 
             <AnalyticsWrapper />
-
         </body>
       </html>
     );

@@ -11,28 +11,18 @@ your finance tracker
 1. GitHub Actions
 1. Ant Design Components
 
-## features
+## todo
 
-- [ ] docker file
+### features
 
-## fixes
+- [ ] docker file (future)  
 
-- [ ] better navigation bar  
-  - [ ] remove old things  
-  - [ ] fix alignment of title  
+### fixes
+
+- [ ] align width of navmenu in navigation bar
 
 - [ ] connect database  
 
-- [ ] dashboard page  
-- [ ] transaction page  
-- [ ] settings page  
+- [ ] toggable menu for mobile website (future)  
 
-- [ ] better file structure and naming  
-
-- [x] old pages not showing (update link in nav_menu for 'oa' and 'od')  
-- [ ] fix old dashboard redirectiong to /auth instead /oa
-- [x] fix old dashboard redirectiong to /auth instead /oa
-
-- [ ] toggable menu for mobile website (smaller screen)  
-
-- [ ] better 404 page  
+- [ ] better 404 page (future)  
