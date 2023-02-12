@@ -8,7 +8,7 @@ import "./layout.sass"
 
 
 
-const devlopmentStatus = true
+const devlopmentStatus = false
 
 // fonts
 const roboto = Roboto({
