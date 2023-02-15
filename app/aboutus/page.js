@@ -1,7 +1,7 @@
 export default function AboutUs() {
     return (
         <main>
-            <h1>monymngr</h1>
+            <h1 id="title">About Us</h1>
         </main>
     )
 }

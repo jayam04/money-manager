@@ -1,7 +1,7 @@
 export default function Transactions() {
     return (
         <main>
-            <h1>Transactions</h1>
+            <h1 id="title">Transactions</h1>
         </main>
     )
 }

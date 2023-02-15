@@ -8,7 +8,7 @@ import "./layout.sass"
 
 
 
-const devlopmentStatus = false
+const devlopmentStatus = true
 
 // fonts
 const roboto = Roboto({
@@ -21,9 +21,7 @@ const roboto = Roboto({
 
 
 // layout
-export default function RootLayout({ children }: {
-    children: React.ReactNode;
-  }) {
+export default function RootLayout({ children }) {
     return (
       <html lang='en-US' className={roboto.className}>
         <head />
@@ -32,10 +30,12 @@ export default function RootLayout({ children }: {
                 ? <Warning />
                 : <></>
             }
+
             <div className="root">
                 <div className="root_sidebar">
                     <Navmenu />
                 </div>
+
                 <div className="root_children">
                     {children}
                 </div>

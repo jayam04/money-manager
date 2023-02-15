@@ -32,6 +32,6 @@ export const metadata = {
 
 
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>;
+    return <h1 id="title">monymngr</h1>;
   }
   

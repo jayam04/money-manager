@@ -8,12 +8,11 @@ export const metadata = {
 export default function Dashboard() {
     return (
         <main className={styles.dashboard}>
-            <h3 className={styles.dashboard_heading}>Dashboard</h3>
+            <h1 id="title">Dashboard</h1>  {/* title id uses css from layout */}
             <div className={styles.dashboard_walletrow}>
             <Wallet name="Cash" currency="INR"/>
             <span />
             <Wallet name="Cash" currency="INR"/>
-                
             </div>
         </main>
     )
