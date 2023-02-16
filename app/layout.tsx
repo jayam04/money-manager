@@ -1,15 +1,15 @@
 import { Roboto } from "@next/font/google"
 
 import { AnalyticsWrapper } from '../components/analytics';
-import Navmenu from "./(components)/sidebar"
-import Warning from "../components/development"
+import Navmenu from "./(components)/(sidebar)/sidebar"
+import Warning from "./(components)/(development)/development"
 // import Sidebar from "./(components)/sidebar"
 
 import "./layout.sass"
 
 
 
-const devlopmentStatus = true
+const devlopmentStatus = false
 
 // fonts
 const roboto = Roboto({
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
             }
 
             <div className="root">
-                <div className="root_sidebar">
+                <div className="sidebar">
                     <Navmenu />
                     {/* <Sidebar /> */}
                 </div>

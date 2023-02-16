@@ -1,6 +1,5 @@
 'use client'
 
-import React from "react";
 import {
     UilSetting,
     UilWallet,
@@ -9,11 +8,9 @@ import {
     UilInfoCircle,
     UilChartPie,
 } from "@iconscout/react-unicons";
-import Link from "next/link";
+import styles from "./navigation.module.sass";
 import { useRouter, usePathname } from "next/navigation";
 
-import styles from "./sidebar.module.sass";
-import "./sidebar.sass"
 
 
 function NavButton({ name, symbol, link }) {
@@ -37,18 +34,9 @@ function NavButton({ name, symbol, link }) {
     );
 }
 
-export default function Navmenu() {
-    console.log('navmenu built')
+export default function Navigation() {
     return (
-        <div className={styles.nav}>
-            <Link href="/">
-                <img
-                    className={styles.nav_logo}
-                    src="/logo.png"
-                    alt="monymngr"
-                />
-            </Link>
-
+        <>
             <hr />
             <NavButton name="Dashboard" symbol={<UilCreateDashboard />} link="/dashboard" />
             <hr />
@@ -60,8 +48,8 @@ export default function Navmenu() {
             <hr />
             <NavButton name="Stats" symbol={<UilChartPie />} link="/stats" />
             <hr />
-            <NavButton name="About Us" symbol={<UilInfoCircle />} link="/aboutus" />
+            <NavButton name="About" symbol={<UilInfoCircle />} link="/aboutus" />
             <hr />
-        </div>
-    );
+        </>
+    )
 }
