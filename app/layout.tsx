@@ -3,6 +3,7 @@ import { Roboto } from "@next/font/google"
 import { AnalyticsWrapper } from '../components/analytics';
 import Navmenu from "../components/navmenu"
 import Warning from "../components/development"
+import Sidebar from "./(components)/sidebar"
 
 import "./layout.sass"
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
             <div className="root">
                 <div className="root_sidebar">
                     <Navmenu />
+                    <Sidebar />
                 </div>
 
                 <div className="root_children">

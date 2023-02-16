@@ -43,7 +43,7 @@ export default function Navmenu() {
             <Link href="/">
                 <img
                     className={styles.nav_logo}
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="monymngr"
                 />
             </Link>
