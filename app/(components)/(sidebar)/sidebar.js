@@ -12,6 +12,7 @@ import "./sidebar.sass"
 
 export default function Navmenu() {
     console.log('navmenu built')
+
     return (
         <div className="sidebar">
             <div className="sidebar_logo">
@@ -20,7 +21,7 @@ export default function Navmenu() {
                         src="/logo.png"
                         alt="monymngr"
                         width={226}
-                        height={75}
+                        height={76}
                     />
                 </Link>
             </div>
@@ -30,6 +31,7 @@ export default function Navmenu() {
             <Navigation />
 
             <hr />
+
 
             <Footer />
 

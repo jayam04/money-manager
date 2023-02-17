@@ -9,6 +9,7 @@ import {
     UilChartPie,
 } from "@iconscout/react-unicons";
 import styles from "./navigation.module.sass";
+import "./navigation.sass"
 import { useRouter, usePathname } from "next/navigation";
 
 
@@ -36,20 +37,13 @@ function NavButton({ name, symbol, link }) {
 
 export default function Navigation() {
     return (
-        <>
-            <hr />
+        <div className="sidebar_nav">
             <NavButton name="Dashboard" symbol={<UilCreateDashboard />} link="/dashboard" />
-            <hr />
             <NavButton name="Transactions" symbol={<UilExchange />} link="/transactions" />
-            <hr />
             <NavButton name="Wallets" symbol={<UilWallet />} link="/wallets" />
-            <hr />
             <NavButton name="Settings" symbol={<UilSetting />} link="/settings" />
-            <hr />
             <NavButton name="Stats" symbol={<UilChartPie />} link="/stats" />
-            <hr />
             <NavButton name="About" symbol={<UilInfoCircle />} link="/aboutus" />
-            <hr />
-        </>
+        </div>
     )
 }

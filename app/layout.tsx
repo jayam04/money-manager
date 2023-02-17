@@ -1,6 +1,6 @@
 import { Roboto } from "@next/font/google"
 
-import { AnalyticsWrapper } from '../components/analytics';
+import { VercelAnalyticsWrapper } from './(components)/(analytics)/vercel';
 import Navmenu from "./(components)/(sidebar)/sidebar"
 import Warning from "./(components)/(development)/development"
 // import Sidebar from "./(components)/sidebar"
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
             </div>
 
 
-            <AnalyticsWrapper />
+            <VercelAnalyticsWrapper />
         </body>
       </html>
     );
