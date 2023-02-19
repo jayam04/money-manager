@@ -15,13 +15,21 @@ export default function Navmenu() {
 
     return (
         <div className="sidebar">
-            <div className="sidebar_logo">
+            <button
+                className="sidebar_togglebutton"
+            >
+            <i className="uil uil-angle-double-left" />
+            </button>
+
+
+            <div className="sidebar_title">
                 <Link href="/">
                     <Image
+                        className="sidebar_title_logo"
                         src="/logo.png"
                         alt="monymngr"
-                        width={226}
-                        height={76}
+                        width={150}
+                        height={50}
                     />
                 </Link>
             </div>

@@ -1,13 +1,5 @@
 'use client'
 
-import {
-    UilSetting,
-    UilWallet,
-    UilCreateDashboard,
-    UilExchange,
-    UilInfoCircle,
-    UilChartPie,
-} from "@iconscout/react-unicons";
 import styles from "./navigation.module.sass";
 import "./navigation.sass"
 import { useRouter, usePathname } from "next/navigation";
@@ -23,12 +15,12 @@ function NavButton({ name, symbol, link }) {
     return (
         <button 
             className={pathname === link
-                ? `${styles.button_active} ${styles.button}`
-                : styles.button
+                ? "sidebar_nav_button sidebar_nav_buttonactive"
+                : "sidebar_nav_button"
             }
             onClick={() => router.push(link)}
         >
-            <div className={styles.button_symbol}>{symbol ? symbol : "S"}</div>
+            <div className="sidebar_nav_buttonicon">{symbol ? <i className={`uil uil-${symbol}`} /> : "S"}</div>
             <span />
             <p>{name}</p>
         </button>
@@ -38,12 +30,12 @@ function NavButton({ name, symbol, link }) {
 export default function Navigation() {
     return (
         <div className="sidebar_nav">
-            <NavButton name="Dashboard" symbol={<UilCreateDashboard />} link="/dashboard" />
-            <NavButton name="Transactions" symbol={<UilExchange />} link="/transactions" />
-            <NavButton name="Wallets" symbol={<UilWallet />} link="/wallets" />
-            <NavButton name="Settings" symbol={<UilSetting />} link="/settings" />
-            <NavButton name="Stats" symbol={<UilChartPie />} link="/stats" />
-            <NavButton name="About" symbol={<UilInfoCircle />} link="/aboutus" />
+            <NavButton name="Dashboard" symbol="create-dashboard" link="/dashboard" />
+            <NavButton name="Transactions" symbol="exchange" link="/transactions" />
+            <NavButton name="Accounts" symbol="wallet" link="/accounts" />
+            <NavButton name="Settings" symbol="setting" link="/settings" />
+            <NavButton name="Stats" symbol="chart-pie" link="/stats" />
+            <NavButton name="About" symbol="info-circle" link="/aboutus" />
         </div>
     )
 }
