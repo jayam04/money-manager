@@ -10,7 +10,7 @@ export default function Dashboard() {
         <main className={styles.dashboard}>
             <h1 id="title">Dashboard</h1>  {/* title id uses css from layout */}
             <div className={styles.dashboard_walletrow}>
-            <Wallet name="Cash" currency="INR"/>
+            <Wallet name="Cash" currency="$"/>
             <span />
             <Wallet name="Cash" currency="INR"/>
             </div>
