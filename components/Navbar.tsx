@@ -1,4 +1,5 @@
 import NavbarItem from "./NavbarItem";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   return (
