@@ -14,6 +14,14 @@ export default function Dashboard() {
 
       {/* temporary */}
       <Table>
+      <TableCaption>A list of your recent transactions.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableCell>Date</TableCell>
+          <TableCell>Description</TableCell>
+          <TableCell>Amount</TableCell>
+        </TableRow>
+      </TableHeader>
       <TableBody>
         {transactions.map((invoice) => (
           <TableRow key={invoice.id}>
