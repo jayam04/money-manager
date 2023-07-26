@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 
 import { AlertCircle, FileWarning, Terminal } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui2/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Sidebar } from "@/components/Sidebar";
 
 let developmentBuild = false;
