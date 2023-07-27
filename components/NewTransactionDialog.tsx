@@ -30,11 +30,15 @@ import { DialogClose } from "@radix-ui/react-dialog";
 export default function NewTranscationDialog() {
   const [date, setDate] = React.useState<Date>();
   const [description, setDescription] = React.useState("burger?");
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState(3.67);
+  const [category, setCategory] = React.useState("food and drinks?");
+  const [account, setAccount] = React.useState("cash?");
 
   function submitForm() {
-
+    console.log("form submitted : ", date, description, amount)
   }
+
+
   return (
     <Dialog>
       {/* button to make dialog open */}
@@ -74,6 +78,30 @@ export default function NewTranscationDialog() {
                 setAmount(parseInt(e.target.value));
               }}
             />
+          </div><div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="amount" className="text-right">
+              Category
+            </Label>
+            <Input
+              id="amount"
+              placeholder="surely food and drinks!"
+              className="col-span-3"
+              onChange={(e) => {
+                setCategory((e.target.value));
+              }}
+            />
+          </div><div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="amount" className="text-right">
+              Account
+            </Label>
+            <Input
+              id="amount"
+              placeholder="do you prefer cash?"
+              className="col-span-3"
+              onChange={(e) => {
+                setAccount(e.target.value);
+              }}
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="date" className="text-right">
@@ -103,8 +131,8 @@ export default function NewTranscationDialog() {
             </Popover>
           </div>
         </div>
-        <DialogClose>
-          <Button type="submit" onClick={submitForm}>add</Button>
+        <DialogClose className="w-40 flex justify-end ml-auto">
+          <Button type="submit" onClick={submitForm} className="w-40" >add</Button>
         </DialogClose>
       </DialogContent>
     </Dialog>
