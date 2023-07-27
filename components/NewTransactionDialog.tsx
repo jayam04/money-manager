@@ -117,7 +117,7 @@ export default function NewTranscationDialog() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "PPP") : <span>I can't guess it!</span>}
+                  {date ? format(date, "PPP") : <span>{"I can't guess it!"}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
