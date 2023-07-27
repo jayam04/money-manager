@@ -72,7 +72,7 @@ export default function NewTranscationDialog() {
             <Input
               id="amount"
               type="number"
-              placeholder="let's me guess, you paid 3.67 dollars!"
+              placeholder="let me guess, you paid 3.67 dollars!"
               className="col-span-3"
               onChange={(e) => {
                 setAmount(parseInt(e.target.value));
