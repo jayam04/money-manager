@@ -24,7 +24,7 @@ export default function RootLayout({
         {developmentBuild ? (
           <div className="text-red-500 font-mono border-2 border-red-500 rounded-xl p-4 m-1">
             <p className="font-bold">NOTICE!</p>
-            <p>You are using development build.</p>
+            <p>You are using development build. Make sure not to share anything personal.</p>
           </div>
         ) : (
           <></>
