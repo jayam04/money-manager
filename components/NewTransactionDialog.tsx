@@ -43,7 +43,7 @@ export default function NewTranscationDialog() {
     <Dialog>
       {/* button to make dialog open */}
       <DialogTrigger asChild>
-        <Button>new transaction</Button>
+        <Button className="mb-1">new transaction</Button>
       </DialogTrigger>
 
       {/* main dialog */}
