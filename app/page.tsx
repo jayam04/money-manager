@@ -1,7 +1,10 @@
+import { PageHeading } from "@/components/Headings"
+
 export default function Home() {
   return (
     <main className="">
-      <h1>monymngr</h1>
+      <PageHeading heading={"dashboard"} />
+      <p>Hello, there!</p>
     </main>
   )
 }
