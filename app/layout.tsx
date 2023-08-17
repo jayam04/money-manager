@@ -1,52 +1,47 @@
-import { Roboto } from "@next/font/google"
+import "./globals.css";
+import { Inter } from "next/font/google";
 
-import { VercelAnalyticsWrapper } from './(components)/(analytics)/vercel';
-import Navmenu from "./(components)/(sidebar)/sidebar"
-import Warning from "./(components)/(development)/development"
-// import Sidebar from "./(components)/sidebar"
+import { Sidebar } from "@/components/Sidebar";
 
-import "./layout.sass"
+let developmentBuild = true;
 
+const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  title: "monymngr",
+  description: "your finance manager",
+};
 
-const devlopmentStatus = false
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en-US">
+      <body className={inter.className}> {/* body height is set to 100vh */}
+      
+        {developmentBuild ? (
+          <div className="text-red-500 font-mono border-2 border-red-500 rounded-xl p-4 m-1">
+            <p className="font-bold">NOTICE!</p>
+            <p>You are using development build. Make sure not to share anything personal.</p>
+          </div>
+        ) : (
+          <></>
+        )}
 
-// fonts
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--default-font'
-});
+        {/* main body */}
+        <div className="flex flex-row h-full">
+          <div className="w-64"><Sidebar /></div>
+          <div className="w-[calc(100%-256px)]">{children}</div>
+        </div>
 
-
-// layout
-export default function RootLayout({ children }) {
-    return (
-      <html lang='en-US' className={roboto.className}>
-        <head />
-        <body>
-            {devlopmentStatus
-                ? <Warning />
-                : <></>
-            }
-
-            <div className="root">
-                <div className="sidebar">
-                    <Navmenu />
-                    {/* <Sidebar /> */}
-                </div>
-
-                <div className="root_children">
-                    {children}
-                </div>
-            </div>
-
-
-            <VercelAnalyticsWrapper />
-        </body>
-      </html>
-    );
-  }
-  
+        {/* icon scout icons */}
+        <link
+          rel="stylesheet"
+          href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+        ></link>
+      </body>
+    </html>
+  );
+}
