@@ -47,7 +47,7 @@ export default function TransactionsPage() {
                     <TableCell>
                         {Object.entries(transaction.accounts).map(([key, value]) => 
                             <div key={key} className="flex flex-row">
-                                <p className="font-mono mr-10">{value} {accounts[key]["currency"]}</p>
+                                <p className="font-mono w-20">{value} {accounts[key]["currency"]}</p>
                                 <p>{accounts[key]["name"]}</p>
                             </div>
                         )}

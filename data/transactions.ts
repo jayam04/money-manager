@@ -49,8 +49,8 @@ export const transactions = [
       "date": "2020-01-13",
       "description": "Transfer",
       "type": "transfer",
-      "category": "transfer",
-      "subcategory": "accounts",
+      "category": "Transfer",
+      "subcategory": "Accounts",
       "accounts": {
         "2": -7298,
         "0": 89,
