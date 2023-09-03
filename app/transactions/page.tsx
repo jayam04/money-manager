@@ -45,12 +45,14 @@ export default function TransactionsPage() {
                     <TableCell>{transaction.category} / {transaction.subcategory}</TableCell>
                     {/* <TableCell className="font-mono text-right">{transaction.amount}</TableCell> */}
                     <TableCell>
-                        {Object.entries(transaction.accounts).map(([key, value]) => 
+                        {transaction.accounts ? (Object.entries(transaction.accounts).map(([key, value]) => 
                             <div key={key} className="flex flex-row">
                                 <p className="font-mono w-20">{value} {accounts[key]["currency"]}</p>
                                 <p>{accounts[key]["name"]}</p>
                             </div>
-                        )}
+                        ))
+                        : <p className="font-mono text-red-600">Wait! I can't find account. Would you like to edit transaction? {transaction.id}</p>
+                        }
                     </TableCell>
 
                 </TableRow>

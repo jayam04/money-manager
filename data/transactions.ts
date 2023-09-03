@@ -62,11 +62,7 @@ export const transactions = [
       "description": "Expense 1",
       "type": "expense",
       "category": "Food",
-      "subcategory": "Groceries",
-      "accounts": {
-        "0": -20,
-        "1": 20
-      }
+      "subcategory": "Groceries"
     },
     {
       "id": "transaction2",
