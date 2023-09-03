@@ -27,7 +27,6 @@ export default function Dashboard() {
           <TableRow key={invoice.id}>
             <TableCell>{invoice.date}</TableCell>
             <TableCell>{invoice.description}</TableCell>
-            <TableCell>{invoice.amount}</TableCell>
           </TableRow>
         ))}
       </TableBody>
