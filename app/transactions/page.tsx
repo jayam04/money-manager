@@ -51,7 +51,7 @@ export default function TransactionsPage() {
                                 <p>{accounts[key]["name"]}</p>
                             </div>
                         ))
-                        : <p className="font-mono text-red-600">Wait! I can't find account. Would you like to edit transaction? {transaction.id}</p>
+                        : <p className="font-mono text-red-600">{`Wait! I can't find account. Would you like to edit transaction? `}{transaction.id}</p>
                         }
                     </TableCell>
 
