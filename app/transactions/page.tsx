@@ -52,6 +52,7 @@ export default function TransactionsPage() {
                             </div>
                         )}
                     </TableCell>
+
                 </TableRow>
             ))}
         </TableBody>
