@@ -1,0 +1,20 @@
+{
+    "cash": {
+      "name": "Cash"
+    },
+    "onlinewallet": {
+      "name": "Online Wallet"
+    },
+    "bankaccount": {
+      "name": "Bank Account"
+    },
+    "creditcard": {
+      "name": "Credit Card"
+    },
+    "stockportfolio": {
+      "name": "Stock Portfolio"
+    },
+    "cryptowallet": {
+      "name": "Crypto Wallet"
+    }
+}

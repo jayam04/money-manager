@@ -1,3 +1,5 @@
+import walletTypes from "./wallet_types.json"
+
 export const transactions = [
     {
       "id": "transaction12",
@@ -162,35 +164,41 @@ export const transactions = [
     }
 ];
 
-export const accounts: {[key: string]: {name: string, type: string, currency: string, color: string}} = {
+export const accounts: {[key: string]: {name: string, type: string, currencies: string[], color: string}} = {
     "0": {
         "name": "Cash",
-        "type": "Wallet",
-        "currency": "USD",
+        "type": "cash",
+        "currencies": ["USD"],
         "color": "#ff0000"
     },
     "1": {
         "name": "Bank 1",
-        "type": "Bank",
-        "currency": "INR",
+        "type": "bankaccount",
+        "currencies": ["INR"],
         "color": "#ff0000"
     },
     "2": {
         "name": "Cash (INR)",
-        "type": "Wallet",
-        "currency": "INR",
+        "type": "cash",
+        "currencies": ["INR"],
         "color": "#ff0000"
     },
     "3": {
         "name": "Big Savings Credit Card",
-        "type": "Credit Card",
-        "currency": "INR",
+        "type": "creditcard",
+        "currencies": ["INR"],
         "color": "#ff0000"
     },
     "4": {
         "name": "Amazon Wallet",
-        "type": "Wallet",
-        "currency": "USD",
+        "type": "onlinewallet",
+        "currencies": ["USD"],
         "color": "#ff0000"
+    },
+    "5": {
+      "name": "Investments",
+      "type": "stockportfolio",
+      "currencies": [],
+      "color": "#ff0000"
     }
 }
