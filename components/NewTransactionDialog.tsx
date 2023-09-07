@@ -115,14 +115,14 @@ export default function NewTranscationDialog() {
                       <div className="col-span-3">
                         {accounts.map((account, index) => {
                           return (
-                            <div className="flex flex-row mt-2 mb-2">
-                            <Select className="">
+                            <div className="flex flex-row mt-2 mb-2" key="todo">
+                            <Select>
                                 <SelectTrigger>
                                     <SelectValue placeholder="wallet"/>
                                 </SelectTrigger>
                                 <SelectContent>
                                     {wallets.map((wallet) => (
-                                        <SelectItem key={wallet.id} value={wallet.id}>{wallet.name}</SelectItem>
+                                        <SelectItem key={wallet.id} value={wallet.id.toString()}>{wallet.name}</SelectItem>
                                     ))}
                                 </SelectContent>
                             </Select>
