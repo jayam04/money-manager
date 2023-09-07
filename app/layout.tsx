@@ -41,6 +41,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
         ></link>
+        {/* Cloudflare Web Analytics */}
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2cf40113ce7140b6879fbaae59ed07aa"}'></script>
       </body>
     </html>
   );
