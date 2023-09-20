@@ -1,0 +1,4 @@
+This is a Brave Creators publisher verification file.
+
+Domain: monymngr.vercel.app
+Token: bd82077f17eac665a8a55a7985369fc97dd56c2055d2586cb7a9bba1c6c5676e
