@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# monymngr
 
-## Getting Started
+Monymngr (obviously from: money manager) helps you track personal finance.
 
-First, run the development server:
+## Events
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Hacktoberfest 2023
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This repo is very much in alpha stage. So anyone can contribute fixing things here and there. It will be valuable for repo.
+Things to consider before contributing.  
+1. There are no hard rules for contributing you can fix 1 line of code or many, just remember it should add value to project.
+2. We are using [shadcn/ui](https://ui.shadcn.com/) and a very simple layout (looks of website). And Typescript.
+3. Use [link here]() to download and add shadcn/ui components. Also npx package manager will work `npx shadcn-ui@latest init` and then `npx shadcn-ui@latest add {component}`
+4. Also using `pnpm` as package manager. I know there is `bun` hype. We can discuss it in discussions. 
