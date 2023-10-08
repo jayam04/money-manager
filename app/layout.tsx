@@ -1,16 +1,18 @@
+'use client'
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 import { Sidebar } from "@/components/Sidebar";
+import { ThemeProvider } from "next-themes";
 
 let developmentBuild = true;
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "monymngr",
-  description: "your finance manager",
-};
+// export const metadata = {
+//   title: "monymngr",
+//   description: "your finance manager",
+// };
 
 export default function RootLayout({
   children,
@@ -20,6 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <body className={inter.className}> {/* body height is set to 100vh */}
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
       
         {developmentBuild ? (
           <div className="text-red-500 font-mono border-2 border-red-500 rounded-xl p-4 m-1">
@@ -43,6 +51,7 @@ export default function RootLayout({
         ></link>
         {/* Cloudflare Web Analytics */}
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2cf40113ce7140b6879fbaae59ed07aa"}'></script>
+      </ThemeProvider>
       </body>
     </html>
   );
