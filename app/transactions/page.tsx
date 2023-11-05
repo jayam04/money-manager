@@ -2,6 +2,8 @@
 
 import { PageHeading } from "@/components/Headings";
 import NewTranscationDialog from "@/components/NewTransactionDialog";
+import NewTransactionSidebar from "@/components/NewTransactionSidebar";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -12,7 +14,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { format } from 'date-fns'; // Import the format function from date-fns
 
 import { transactions, accounts } from "@/data/transactions";
 
@@ -22,7 +23,8 @@ export default function TransactionsPage() {
     <>
       <PageHeading heading={"transactions"} />
       <NewTranscationDialog />
-
+      <div className="flex flex-row">
+        <div className="w-3/5">
       <Table>
         <TableHeader>
           <TableRow>
@@ -58,7 +60,9 @@ export default function TransactionsPage() {
                 </TableRow>
             ))}
         </TableBody>
-      </Table>
+      </Table></div>
+      <NewTransactionSidebar />
+      </div>
     </>
   );
 }
