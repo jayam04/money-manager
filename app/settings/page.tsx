@@ -5,6 +5,8 @@ export default function SettingsPage() {
   return(
     <>
     <PageHeading heading={"settings"} />
+    {/* tmp */}
+    <p>Hello!</p>
     <SignInSignOutBundle />
     </>
   )

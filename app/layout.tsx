@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeProvider } from "next-themes";
 
-let developmentBuild = true;
+let developmentBuild = false;
 
 const inter = Inter({ subsets: ["latin"] });
 

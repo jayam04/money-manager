@@ -6,8 +6,7 @@ export const transactions = [
       "date": "2020-01-01",
       "description": "Burger",
       "type": "expense",
-      "category": "Food",
-      "subcategory": "Fast Food",
+      "category": "Fast Food",
       "accounts": {
         "3": -99
       }
@@ -17,8 +16,7 @@ export const transactions = [
       "date": "2020-01-11",
       "description": "Shoes",
       "type": "expense",
-      "category": "Shopping",
-      "subcategory": "Shoes",
+      "category": "Shoes",
       "accounts": {
         "0": -100,
         "4": -345
@@ -29,8 +27,7 @@ export const transactions = [
       "date": "2020-01-12",
       "description": "Cashback on Shoes",
       "type": "income",
-      "category": "Offers and Cashback",
-      "subcategory": "Cashback",
+      "category": "Cashback",
       "accounts": {
         "4": 34
       }
@@ -40,8 +37,7 @@ export const transactions = [
       "date": "2020-01-13",
       "description": "Gas",
       "type": "expense",
-      "category": "Transportation",
-      "subcategory": "Gas",
+      "category": "Gas",
       "accounts": {
         "2": -500
       }
@@ -51,8 +47,7 @@ export const transactions = [
       "date": "2020-01-13",
       "description": "Transfer",
       "type": "transfer",
-      "category": "Transfer",
-      "subcategory": "Accounts",
+      "category": "Accounts",
       "accounts": {
         "2": -7298,
         "0": 89,
@@ -63,7 +58,7 @@ export const transactions = [
       "date": "2020-01-02",
       "description": "Expense 1",
       "type": "expense",
-      "category": "Food",
+      "category": "Groceries",
       "subcategory": "Groceries"
     },
     {
@@ -71,7 +66,7 @@ export const transactions = [
       "date": "2020-01-03",
       "description": "Expense 2",
       "type": "expense",
-      "category": "Entertainment",
+      "category": "Movies",
       "subcategory": "Movies",
       "accounts": {
         "0": -15,
@@ -83,7 +78,7 @@ export const transactions = [
       "date": "2020-01-04",
       "description": "Expense 3",
       "type": "expense",
-      "category": "Transportation",
+      "category": "Gas",
       "subcategory": "Gas",
       "accounts": {
         "0": -30,
@@ -95,7 +90,7 @@ export const transactions = [
       "date": "2020-01-05",
       "description": "Expense 4",
       "type": "expense",
-      "category": "Shopping",
+      "category": "Clothing",
       "subcategory": "Clothing",
       "accounts": {
         "0": -50,
@@ -107,7 +102,7 @@ export const transactions = [
       "date": "2020-01-06",
       "description": "Expense 5",
       "type": "expense",
-      "category": "Food",
+      "category": "Dining Out",
       "subcategory": "Dining Out",
       "accounts": {
         "0": -40,
@@ -119,7 +114,7 @@ export const transactions = [
       "date": "2020-01-07",
       "description": "Expense 6",
       "type": "expense",
-      "category": "Entertainment",
+      "category": "Concert",
       "subcategory": "Concert",
       "accounts": {
         "0": -60,
@@ -131,7 +126,7 @@ export const transactions = [
       "date": "2020-01-08",
       "description": "Expense 7",
       "type": "expense",
-      "category": "Shopping",
+      "category": "Electronics",
       "subcategory": "Electronics",
       "accounts": {
         "0": -70,
@@ -143,7 +138,7 @@ export const transactions = [
       "date": "2020-01-09",
       "description": "Expense 8",
       "type": "expense",
-      "category": "Food",
+      "category": "Groceries",
       "subcategory": "Groceries",
       "accounts": {
         "0": -25,
@@ -155,7 +150,7 @@ export const transactions = [
       "date": "2020-01-10",
       "description": "Expense 9",
       "type": "expense",
-      "category": "Transportation",
+      "category": "Bus Fare",
       "subcategory": "Bus Fare",
       "accounts": {
         "0": -10,
@@ -200,5 +195,93 @@ export const accounts: {[key: string]: {name: string, type: string, currencies: 
       "type": "stockportfolio",
       "currencies": [],
       "color": "#ff0000"
+    }
+}
+
+export const categories: {[key: string]: {name: string, color: string, parentId: string}} = {
+    "Food": {
+        "name": "Food",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Shopping": {
+        "name": "Shopping",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Transportation": {
+        "name": "Transportation",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Entertainment": {
+        "name": "Entertainment",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Transfer": {
+        "name": "Transfer",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Offers and Cashback": {
+        "name": "Offers and Cashback",
+        "color": "#ff0000",
+        "parentId": ""
+    },
+    "Fast Food": {
+        "name": "Fast Food",
+        "color": "#ff0000",
+        "parentId": "Food"
+    },
+    "Shoes": {
+        "name": "Shoes",
+        "color": "#ff0000",
+        "parentId": "Shopping"
+    },
+    "Clothing": {
+        "name": "Clothing",
+        "color": "#ff0000",
+        "parentId": "Shopping"
+    },
+    "Groceries": {
+        "name": "Groceries",
+        "color": "#ff0000",
+        "parentId": "Food"
+    },
+    "Dining Out": {
+        "name": "Dining Out",
+        "color": "#ff0000",
+        "parentId": "Food"
+    },
+    "Movies": {
+        "name": "Movies",
+        "color": "#ff0000",
+        "parentId": "Entertainment"
+    },
+    "Concert": {
+        "name": "Concert",
+        "color": "#ff0000",
+        "parentId": "Entertainment"
+    },
+    "Accounts": {
+      "name": "Accounts",
+      "color": "#ff0000",
+      "parentId": "Transfer"
+    },
+    "Gas": {
+      "name": "Gas",
+      "color": "#ff0000",
+      "parentId": "Transportation"
+    },
+    "Bus Fare": {
+      "name": "Bus Fare",
+      "color": "#ff0000",
+      "parentId": "Transportation"
+    },
+    "Electronics": {
+      "name": "Electronics",
+      "color": "#ff0000",
+      "parentId": "Shopping"
     }
 }

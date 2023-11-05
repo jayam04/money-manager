@@ -38,3 +38,6 @@ next-env.d.ts
 # ides
 .vscode
 .idea
+
+# tmp and trash
+**/tmp

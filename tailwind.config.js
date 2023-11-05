@@ -8,6 +8,10 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    fontFamily: {
+      'mono': ['JetBrains Mono'],
+      'display': ['Agbalumo']
+    },
     container: {
       center: true,
       padding: "2rem",
