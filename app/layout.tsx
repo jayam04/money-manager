@@ -5,14 +5,14 @@ import { Inter } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeProvider } from "next-themes";
 
-let developmentBuild = false;
+let developmentBuild = true;
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = {
-//   title: "monymngr",
-//   description: "your finance manager",
-// };
+export const metadata = {
+  title: "monymngr",
+  description: "your finance manager",
+};
 
 export default function RootLayout({
   children,
