@@ -9,10 +9,10 @@ let developmentBuild = true;
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "monymngr",
-  description: "your finance manager",
-};
+// export const metadata = {
+//   title: "monymngr",
+//   description: "your finance manager",
+// };
 
 export default function RootLayout({
   children,
