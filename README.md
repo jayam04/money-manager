@@ -1,6 +1,6 @@
 # monymngr
-
-Monymngr (obviously from: money manager) helps you track personal finance.
+this UI is depreciated but it can still be accessed at [old.spends.crimsontwilight.in](https://old.spends.crimsontwilight.in)  
+Monymngr (obviously from money manager) helps you track personal finance.
 
 ## Events
 
