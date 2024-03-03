@@ -1,57 +1,57 @@
-'use client'
+// Navigation Menu
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+
+import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-import { Sidebar } from "@/components/Sidebar";
-import { ThemeProvider } from "next-themes";
-
-let developmentBuild = true;
-
-const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "monymngr",
-//   description: "your finance manager",
+// export const metadata: Metadata = {
+//     title: "spends",
+//     description: "track your daily spends with ease",
 // };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
+  const menubarItems = {
+    Dashboard: "/",
+    Transactions: "/transactions",
+  };
   return (
     <html lang="en-US">
-      <body className={inter.className}> {/* body height is set to 100vh */}
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-      
-        {developmentBuild ? (
-          <div className="text-red-500 font-mono border-2 border-red-500 rounded-xl p-4 m-1">
-            <p className="font-bold">NOTICE!</p>
-            <p>You are using development build. Make sure not to share anything personal.</p>
-          </div>
-        ) : (
-          <></>
-        )}
+      <body>
+        {/* Navigation Menu */}
+        <NavigationMenu>
+          <h1 className="text-lg text-emerald-600">spends</h1>
+          {Object.entries(menubarItems).map(([label, href]) => (
+            <NavigationMenuItem key={label}>
+              <Link href={href} legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  {label}
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenu>
+        <hr></hr>
 
-        {/* main body */}
-        <div className="flex flex-row h-full">
-          <div className="w-64"><Sidebar /></div>
-          <div className="w-[calc(100%-256px)]">{children}</div>
-        </div>
-
-        {/* icon scout icons */}
-        <link
-          rel="stylesheet"
-          href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
-        ></link>
-        {/* Cloudflare Web Analytics */}
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2cf40113ce7140b6879fbaae59ed07aa"}'></script>
-      </ThemeProvider>
+        {/* Childern Here */}
+        {children}
       </body>
     </html>
   );

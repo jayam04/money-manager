@@ -1,137 +1,153 @@
-"use client";
-
-import { PageHeading } from "@/components/Headings";
-import NewTranscationDialog from "@/components/NewTransactionDialog";
-import NewTransactionSidebar from "@/components/NewTransactionSidebar";
-import { Button } from "@/components/ui/button";
 import {
-   Table,
-   TableBody,
-   TableCaption,
-   TableCell,
-   TableHead,
-   TableHeader,
-   TableRow,
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/ui/table";
 
-import { Timestamp, doc, getDoc } from "firebase/firestore";
+export default function Dashboard() {
+  // TODO: fetch transactions
+  const invoices = [
+    {
+      invoice: "INV001",
+      paymentStatus: "Paid",
+      totalAmount: "$250.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV002",
+      paymentStatus: "Pending",
+      totalAmount: "$150.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV003",
+      paymentStatus: "Unpaid",
+      totalAmount: "$350.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV004",
+      paymentStatus: "Paid",
+      totalAmount: "$450.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV005",
+      paymentStatus: "Paid",
+      totalAmount: "$550.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV006",
+      paymentStatus: "Pending",
+      totalAmount: "$200.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV007",
+      paymentStatus: "Unpaid",
+      totalAmount: "$300.00",
+      paymentMethod: "Credit Card",
+    },
+  ];
+  // TODO: get data directly using hashmap
+  const invoicesHashMap: { [key: string]: Transaction } = {};
+  invoices.forEach((invoice) => {
+    const transaction: Transaction = {
+      id: invoice.invoice,
+      name: "John Doe",
+      date: Date.now(),
+      categoryID: invoice.paymentMethod,
+      amounts: [
+        {
+          amount: 234,
+          accountID: "Cash",
+          currencyID: "USD",
+        },
+      ],
+      note: "Same for every transaction",
+      tags: ["#testing"],
+    };
+    invoicesHashMap[invoice.invoice] = transaction;
+  });
+  invoicesHashMap[invoices[0].invoice].amounts.push({
+    amount: 234,
+    accountID: "Cash",
+    currencyID: "USD",
+  });
+  invoicesHashMap[invoices[0].invoice].name = "Johny Johny! Yes Papa ............................."
 
-import { transactions, accounts } from "@/data/transactions";
-import { db } from "@/js/firebase/firebase";
-import { useEffect, useState } from "react";
-import { Transaction } from "@/js/types";
-import { format } from "date-fns";
+  let total = new Map<string, number>();
 
-export default function TransactionsPage() {
-   const [newTransactionSidebar, setNewTransactionSidebar] = useState(false);
-   const [fTransactions, setFTransactions] = useState<Record<string, Transaction>>({});
-   const fetchData = async () => {
-      try {
-         const docRef = doc(
-            db,
-            "lx0jFJVRtPeFlwl4dkYKsO0EtFb2",
-            "transactions"
-         );
-         const docSnap = await getDoc(docRef);
-         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
-            setFTransactions(docSnap.data());
-         }
-      } catch (error) {
-         console.error("Error fetching data:", error);
-      }
-   };
-   useEffect(() => {
-      
-      fetchData();
-   }, []);
+  return (
+    <Table>
+      {/* TODO: get better caption, yeah we are going to have caption */}
+      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Transaction ID</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Date</TableHead>
+          <TableHead>Category</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+          <TableHead>Account</TableHead>
+          <TableHead>Tags</TableHead>
+          <TableHead>Notes</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {Object.values(invoicesHashMap).map((invoice) => (
+          <TableRow key={invoice.id}>
+            <TableCell className="font-medium">{invoice.id}</TableCell>
+            <TableCell>{invoice.name}</TableCell>
+            <TableCell>{invoice.categoryID}</TableCell>
+            <TableCell>Cash</TableCell>
+            <TableCell className="text-right">
+              {invoice.amounts.map((amount, index) => {
+                {
+                  let currencyID = amount.currencyID;
+                  if (total.has(currencyID)) {
+                    // Key exists, increment the value
+                    total.set(
+                      currencyID,
+                      total.get(currencyID)! + amount.amount
+                    );
+                  } else {
+                    // Key doesn't exist, set the initial value
+                    total.set(currencyID, amount.amount);
+                  }
+                }
+                return <p key={index}>{amount.amount}</p>;
+              })}
+            </TableCell>
+            <TableCell>
+              {invoice.amounts.map((amount, index) => (
+                <p key={index}>{amount.accountID}</p>
+              ))}
+            </TableCell>
+            <TableCell>#testing</TableCell>
+            <TableCell>Same for every transaction</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+      <TableFooter>
+        <TableRow>
+          <TableCell colSpan={4}>Total</TableCell>
+          <TableCell className="text-right">{total.get("USD")}</TableCell>
+          <TableCell colSpan={3}></TableCell>
+        </TableRow>
+      </TableFooter>
+    </Table>
+  );
 
-   const closeAddTransaction = () => {
-      setNewTransactionSidebar(false);
-   };
-
-   return (
-      <>
-         <PageHeading heading={"transactions"} />
-         <Button
-            onClick={() => setNewTransactionSidebar(!newTransactionSidebar)}
-            className="mb-1"
-         >
-            new transaction
-         </Button>
-         <Button variant="ghost" onClick={fetchData}>refresh</Button>
-         <div className="flex flex-row">
-            <div className={newTransactionSidebar ? "w-3/5" : ""}>
-               <Table>
-                  <TableHeader>
-                     <TableRow>
-                        {/* <TableHead className="w-[100px]">id</TableHead> */}
-                        <TableHead className="w-1/4">description</TableHead>
-                        {/* <TableHead>wallet</TableHead> */}
-                        <TableHead className="w-1/6">date</TableHead>
-                        <TableHead className="w-1/6">category</TableHead>
-                        <TableHead className="w-1/6">type</TableHead>
-                        <TableHead className="w-1/4 text-right font-mono">
-                           amount
-                        </TableHead>
-                     </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                     {Object.keys(fTransactions).map((key) => {
-                        const transaction = fTransactions[key];
-                        return (
-                           <TableRow
-                              key={transaction.id}
-                              className="justify-right"
-                           >
-                              {/* <TableCell>{transaction.id}</TableCell> */}
-                              <TableCell>{transaction.description}</TableCell>
-                              {/* <TableCell>{transaction.wallet}</TableCell> */}
-                              {/* <TableCell>{format(transaction.date, 'MM/dd/yyyy')}</TableCell> */}
-                              <TableCell>{format(transaction.date.toDate(), "MMM d, yyyy")}</TableCell>
-                              <TableCell>
-                                 {transaction.category}
-                                 {/* {transaction.subcategory} */}
-                              </TableCell>
-                              <TableCell>{transaction.type}</TableCell>
-                              {/* <TableCell className="font-mono text-right">{transaction.amount}</TableCell> */}
-                              <TableCell>
-                                 {transaction.accounts ? (
-                                    Object.entries(transaction.accounts).map(
-                                       ([key, value]) => (
-                                          <div
-                                             key={key}
-                                             className="flex flex-row"
-                                          >
-                                             <p className="font-mono w-24 text-right pr-2">
-                                                {value}{" "}
-                                                {accounts[key]["currencies"]}
-                                             </p>
-                                             <p>{accounts[key]["name"]}</p>
-                                          </div>
-                                       )
-                                    )
-                                 ) : (
-                                    <p className="font-mono text-red-600">
-                                       {`Wait! I can't find account. Would you like to edit transaction? `}
-                                       {transaction.id}
-                                    </p>
-                                 )}
-                              </TableCell>
-                           </TableRow>
-                        );
-                     })}
-                  </TableBody>
-               </Table>
-            </div>
-            {newTransactionSidebar ? (
-               <NewTransactionSidebar
-                  closeButtonFunction={closeAddTransaction}
-               />
-            ) : (
-               <></>
-            )}
-         </div>
-      </>
-   );
+  return (
+    <div>
+      <h1>Dashboard</h1>
+    </div>
+  );
 }
