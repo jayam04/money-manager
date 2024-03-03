@@ -4,24 +4,28 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { Spectral } from "next/font/google";
+
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 import type { Metadata } from "next";
 import "./globals.css";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // export const metadata: Metadata = {
 //     title: "spends",
 //     description: "track your daily spends with ease",
 // };
+
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+})
 
 export default function RootLayout({
   children,
@@ -29,14 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const menubarItems = {
-    Dashboard: "/",
     Transactions: "/transactions",
+    Categories: "/categories",
+    Accounts: "/accounts",
   };
   return (
     <html lang="en-US">
-      <body>
+      <body className={spectral.className}>
         {/* Navigation Menu */}
-        <NavigationMenu>
+        <NavigationMenu className="m-1">
           <h1 className="text-lg text-emerald-600">spends</h1>
           {Object.entries(menubarItems).map(([label, href]) => (
             <NavigationMenuItem key={label}>
@@ -47,6 +52,10 @@ export default function RootLayout({
               </Link>
             </NavigationMenuItem>
           ))}
+          <Avatar>
+            <AvatarImage src="https://avatars.githubusercontent.com/u/93824505?v=4" />
+            <AvatarFallback>JP</AvatarFallback>
+          </Avatar>
         </NavigationMenu>
         <hr></hr>
 

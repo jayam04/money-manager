@@ -1,13 +1,6 @@
-type Transaction = {
+type Currency = {
     id: string;
-    name: string;
-    date: number;
-    categoryID: string;
-    amounts: Amount[];
-    tags: string[];
-    note: string;
-
-    // TODO: create constructor
+    display: string;
 }
 
 type Amount = {
@@ -20,9 +13,29 @@ type Category = {
     id: string;
     baseName: string;
     parentID: string;
+
+    tags: string[];
+    note: string;
 }
 
-type Currency = {
+type Account = {
     id: string;
-    display: string;
+    name: string;
+    type: string;
+    currenciesSupported: string[];
+
+    note: string;
+}
+
+type Transaction = {
+    id: string;
+    name: string;
+    date: number;
+    categoryID: string;
+    amounts: Amount[];
+
+    tags: string[];
+    note: string;
+
+    // TODO: create constructor
 }
