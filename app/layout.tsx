@@ -4,7 +4,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { Spectral } from "next/font/google";
+import { Spectral, Nanum_Gothic } from "next/font/google";
 
 import {
   NavigationMenu,
@@ -16,7 +16,7 @@ import {
 import type { Metadata } from "next";
 import "./globals.css";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { getUser } from "@/lib/appAuth";
+import { getUser } from "@/lib/app/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase/auth";
 import { createHash } from "crypto";
@@ -29,6 +29,10 @@ import { createHash } from "crypto";
 const spectral = Spectral({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+})
+const nanum = Nanum_Gothic({
+  subsets: ["latin"],
+  weight: ["400", "700"],
 })
 
 export default function RootLayout({
@@ -55,7 +59,7 @@ export default function RootLayout({
     <html lang="en-US">
       <body className={spectral.className}>
         {/* Navigation Menu */}
-        <NavigationMenu className="m-1">
+        <NavigationMenu className="m-1 max-w-full justify-start">
           <h1 className="text-lg text-emerald-600">spends</h1>
           {Object.entries(menubarItems).map(([label, href]) => (
             <NavigationMenuItem key={label}>
@@ -66,7 +70,7 @@ export default function RootLayout({
               </Link>
             </NavigationMenuItem>
           ))}
-          <Avatar>
+          <Avatar className="ml-auto mr-2">
             <AvatarImage src={`https://gravatar.com/avatar/${userEmailHash}/?d=""`} />
             <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
           </Avatar>

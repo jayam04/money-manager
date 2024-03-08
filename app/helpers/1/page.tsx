@@ -1,6 +1,6 @@
 "use client";
 
-import { createUser, getUser } from "@/lib/appAuth";
+import { createUser, getUser } from "@/lib/app/auth";
 import { getFirebaseAuth } from "@/lib/firebase/auth";
 import logger from "@/lib/logger";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";

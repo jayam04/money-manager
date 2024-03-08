@@ -1,15 +1,25 @@
 "use client";
 
-import { allTransactions, transactions } from "@/app/transactions/(archive)/getData";
+import {
+  allTransactions,
+  transactions,
+} from "@/app/transactions/(archive)/getData";
+import { uploadTransaction } from "@/lib/app/db";
 import { getApp } from "@/lib/firebase/app";
 import { firebaseConfig } from "@/lib/firebase/constants";
 import { getDB } from "@/lib/firebase/firestore";
 import logger from "@/lib/logger";
 import { initializeApp } from "firebase/app";
-import { doc, getDoc, getFirestore, setDoc, writeBatch } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  getFirestore,
+  setDoc,
+  writeBatch,
+} from "firebase/firestore";
 
 export default function NewTransaction() {
-  submitForm();
+  submitForm2();
   return (
     <div>
       <h1>New Transaction</h1>
@@ -65,8 +75,8 @@ async function submitForm() {
   await batch.commit();
   const timeTaken = Date.now() - currentUnixTime;
   logger.info(`Time taken to commit ${timeTaken}ms`);
-  const docRef = doc(db, userId, "transactions");
-  await setDoc(docRef, { "1709231401": transactionsMap }, { merge: true });
+  const docRef = doc(db, userId, "1709231");
+  await setDoc(docRef, transactionsMap, { merge: true });
   // If the form is invalid, display an error message
 
   // read data
@@ -78,4 +88,8 @@ async function submitForm() {
     // docSnap.data() will be undefined in this case
     console.log("No such document!");
   }
+}
+
+async function submitForm2() {
+  uploadTransaction(allTransactions)
 }

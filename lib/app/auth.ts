@@ -2,9 +2,9 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirebaseAuth } from "./firebase/auth";
-import logger from "./logger";
-import { DEFAULTUSER, GUESTUSER } from "./constants";
+import { getFirebaseAuth } from "../firebase/auth";
+import logger from "../logger";
+import { DEFAULTUSER, GUESTUSER } from "../constants";
 
 let user: SpendsUser;
 

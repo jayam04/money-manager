@@ -37,13 +37,13 @@ export const categories: Category[] = [
 ];
 export const transactions: Transaction[] = [
   {
-    id: "txn1",
-    name: "Grocery Shopping",
-    date: Date.now(),
-    categoryID: "cat1",
+    id: "transfer1",
+    name: "Converted from USD to INR",
+    date: Math.floor(Math.random() * 1709960082),
+    categoryID: "transfer",
     amounts: [
-      { amount: 50, accountID: "acc1", currencyID: "USD" },
-      { amount: -50, accountID: "acc2", currencyID: "USD" },
+      { amount: -50, accountID: "acc1", currencyID: "USD" },
+      { amount: 4000, accountID: "acc2", currencyID: "INR" },
     ],
     tags: ["shopping", "groceries"],
     note: "Bought groceries for the week",
@@ -51,7 +51,7 @@ export const transactions: Transaction[] = [
   {
     id: "txn2",
     name: "Dinner at Restaurant",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat2",
     amounts: [{ amount: 30, accountID: "acc2", currencyID: "USD" }],
     tags: ["dining", "restaurant"],
@@ -63,7 +63,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn3",
     name: "Online Shopping",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat1",
     amounts: [{ amount: 75, accountID: "acc1", currencyID: "USD" }],
     tags: ["shopping", "online-shopping"],
@@ -72,7 +72,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn4",
     name: "Coffee Break",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat2",
     amounts: [{ amount: 5, accountID: "acc2", currencyID: "USD" }],
     tags: ["coffee", "break"],
@@ -81,7 +81,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn5",
     name: "Bookstore Visit",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat1",
     amounts: [{ amount: 20, accountID: "acc1", currencyID: "USD" }],
     tags: ["shopping", "books"],
@@ -90,7 +90,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn6",
     name: "Lunch with Friends",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat2",
     amounts: [{ amount: 40, accountID: "acc2", currencyID: "USD" }],
     tags: ["dining", "lunch", "friends"],
@@ -99,7 +99,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn7",
     name: "Tech Gadgets",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat1",
     amounts: [{ amount: 200, accountID: "acc1", currencyID: "USD" }],
     tags: ["shopping", "gadgets"],
@@ -108,7 +108,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn8",
     name: "Movie Night",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat2",
     amounts: [{ amount: 25, accountID: "acc2", currencyID: "USD" }],
     tags: ["entertainment", "movies"],
@@ -117,7 +117,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn9",
     name: "Fitness Class",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat1",
     amounts: [{ amount: 30, accountID: "acc1", currencyID: "USD" }],
     tags: ["fitness", "exercise"],
@@ -126,7 +126,7 @@ export const additionalTransactions: Transaction[] = [
   {
     id: "txn10",
     name: "Weekend Getaway",
-    date: Date.now(),
+    date: Math.floor(Math.random() * 1709960082),
     categoryID: "cat2",
     amounts: [{ amount: 150, accountID: "acc2", currencyID: "USD" }],
     tags: ["travel", "weekend"],
