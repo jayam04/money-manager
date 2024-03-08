@@ -16,6 +16,10 @@ import {
 import type { Metadata } from "next";
 import "./globals.css";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { getUser } from "@/lib/appAuth";
+import { onAuthStateChanged } from "firebase/auth";
+import { getFirebaseAuth } from "@/lib/firebase/auth";
+import { createHash } from "crypto";
 
 // export const metadata: Metadata = {
 //     title: "spends",
@@ -36,7 +40,17 @@ export default function RootLayout({
     Transactions: "/transactions",
     Categories: "/categories",
     Accounts: "/accounts",
+    "Construction Helper": "/construction",
   };
+
+  let [currentUser, setCurrentUser] = React.useState(getUser())
+  let [userEmailHash, setUserEmailHash] = React.useState(`https://github.com/avatar/${currentUser.email}`)
+
+  onAuthStateChanged(getFirebaseAuth(), (user) => {
+    let newUser = getUser()
+    setCurrentUser(newUser)
+    setUserEmailHash(createHash('sha256').update(newUser.email).digest('hex'))
+  })
   return (
     <html lang="en-US">
       <body className={spectral.className}>
@@ -53,8 +67,8 @@ export default function RootLayout({
             </NavigationMenuItem>
           ))}
           <Avatar>
-            <AvatarImage src="https://avatars.githubusercontent.com/u/93824505?v=4" />
-            <AvatarFallback>JP</AvatarFallback>
+            <AvatarImage src={`https://gravatar.com/avatar/${userEmailHash}/?d=""`} />
+            <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
           </Avatar>
         </NavigationMenu>
         <hr></hr>

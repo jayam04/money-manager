@@ -1,6 +1,6 @@
 "use client";
 
-import { allTransactions, transactions } from "@/app/transactions/getData";
+import { allTransactions, transactions } from "@/app/transactions/(archive)/getData";
 import { getApp } from "@/lib/firebase/app";
 import { firebaseConfig } from "@/lib/firebase/constants";
 import { getDB } from "@/lib/firebase/firestore";
