@@ -8,11 +8,23 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getTransactionsMain } from "@/lib/app/db";
+import { getCategoriesNoSync, getTransactionsMain } from "@/lib/app/db";
+import { Timestamp } from "firebase/firestore";
+import { accounts, categories } from "./(archive)/getDataExample";
+import { getCategoryDisplay } from "@/lib/transforms";
 
 export default async function Dashboard() {
 
   let total: { [key: string]: number } = {};
+
+  let localCategories: { [key: string]: Category } = {};
+  for (let i = 0; i < categories.length; i++) {
+    localCategories[categories[i].id] = categories[i];
+  }
+  let localAccounts: { [key: string]: Account } = {};
+  for (let i = 0; i < accounts.length; i++) {
+    localAccounts[accounts[i].id] = accounts[i];
+  }
 
   // TODO: fetch transactions
   const transactions= await getTransactionsMain();
@@ -38,8 +50,8 @@ export default async function Dashboard() {
           <TableRow key={invoice.id}>
             <TableCell className="font-medium">{invoice.id}</TableCell>
             <TableCell>{invoice.name}</TableCell>
-            <TableCell>{invoice.categoryID}</TableCell>
-            <TableCell>Cash</TableCell>
+            <TableCell>{new Date(invoice.date * 1000).toLocaleDateString("en-US")}</TableCell>
+            <TableCell>{getCategoryDisplay(localCategories[invoice.categoryID])}</TableCell>
             <TableCell className="text-right">
               {
               invoice.amounts.map((amount: Amount, index: number) => {
@@ -57,11 +69,11 @@ export default async function Dashboard() {
             </TableCell>
             <TableCell>
               {invoice.amounts.map((amount: Amount, index:number) => (
-                <p key={index}>{amount.accountID}</p>
+                <p key={index}>{localAccounts[amount.accountID].name}</p>
               ))}
             </TableCell>
-            <TableCell>#testing</TableCell>
-            <TableCell>Same for every transaction</TableCell>
+            <TableCell>{invoice.tags}</TableCell>
+            <TableCell>{invoice.note}</TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -3,6 +3,12 @@ import { getDB } from "../firebase/firestore";
 import { getDocumentIdForTimestamp } from "./db.helper";
 import { getUser } from "./auth";
 import logger from "../logger";
+import * as sampleData from "@/app/transactions/(archive)/getDataExample"
+
+let transactions: { [key: string]: Transaction } = {};
+let categories: { [key: string]: Category } = {};
+let accounts: { [key: string]: Account } = {};
+let currencies: { [key: string]: Currency } = {};
 
 export function uploadTransaction(transactions: Transaction[]) {
     const user = getUser();
@@ -46,4 +52,14 @@ export async function getTransactionsMain(getAllTransactions: Boolean = true) {
 
     logger.info(`Got ${transactions.length} transactions`);
     return transactions
+}
+
+export function getCategoriesNoSync() {
+    // TODO: remove tmp data
+    for (let i = 0; i < sampleData.categories.length; i++) {
+        categories[sampleData.categories[i].id] = sampleData.categories[i];
+    }
+
+
+    return categories;
 }

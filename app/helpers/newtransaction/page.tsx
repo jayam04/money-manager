@@ -2,8 +2,10 @@
 
 import {
   allTransactions,
-  transactions,
 } from "@/app/transactions/(archive)/getData";
+import {
+  transactions,
+} from "@/app/transactions/(archive)/getDataExample";
 import { uploadTransaction } from "@/lib/app/db";
 import { getApp } from "@/lib/firebase/app";
 import { firebaseConfig } from "@/lib/firebase/constants";
@@ -91,5 +93,9 @@ async function submitForm() {
 }
 
 async function submitForm2() {
-  uploadTransaction(allTransactions)
+  let transactions2 = transactions
+  for (let i = 0; i < transactions2.length; i++) {
+    transactions2[i].date = Math.floor(Math.random() * Date.now() / 1000)
+  }
+  uploadTransaction(transactions2)
 }
