@@ -10,6 +10,7 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
+
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
@@ -20,6 +21,7 @@ import { getUser } from "@/lib/app/auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { getFirebaseAuth } from "@/lib/firebase/auth";
 import { createHash } from "crypto";
+
 
 // export const metadata: Metadata = {
 //     title: "spends",
@@ -74,6 +76,7 @@ export default function RootLayout({
             <AvatarImage src={`https://gravatar.com/avatar/${userEmailHash}/?d=""`} />
             <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
           </Avatar>
+
         </NavigationMenu>
         <hr></hr>
 

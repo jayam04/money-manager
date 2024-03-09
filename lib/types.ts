@@ -46,4 +46,4 @@ type Transaction = {
     note: string;
 
     // TODO: create constructor
-};
+}

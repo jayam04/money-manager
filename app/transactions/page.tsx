@@ -91,10 +91,4 @@ export default async function Dashboard() {
       </TableFooter>
     </Table>
   );
-
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
-  );
 }
