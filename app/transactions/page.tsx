@@ -13,6 +13,8 @@ import { Timestamp } from "firebase/firestore";
 import { accounts, categories } from "./(archive)/getDataExample";
 import { getCategoryDisplay } from "@/lib/transforms";
 
+export const dynamic = "force-dynamic";
+
 export default async function Dashboard() {
 
   let total: { [key: string]: number } = {};
@@ -28,7 +30,6 @@ export default async function Dashboard() {
 
   // TODO: fetch transactions
   const transactions= await getTransactionsMain();
-  console.log("Transactions: ", transactions)
   return (
     <Table>
       {/* TODO: get better caption, yeah we are going to have caption */}
@@ -69,7 +70,7 @@ export default async function Dashboard() {
             </TableCell>
             <TableCell>
               {invoice.amounts.map((amount: Amount, index:number) => (
-                <p key={index}>{localAccounts[amount.accountID].name}</p>
+                <p key={index}>{localAccounts[amount.accountID] ? localAccounts[amount.accountID].name : amount.accountID}</p>
               ))}
             </TableCell>
             <TableCell>{invoice.tags}</TableCell>

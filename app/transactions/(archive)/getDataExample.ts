@@ -3,6 +3,7 @@ export const currencies: Currency[] = [
     { id: 'usd', display: '$' },
     { id: 'eur', display: '€' },
     { id: 'gbp', display: '￡' },
+    { id: "%stocks%", display: "STOCK"}
   ];
   
   // Categories
