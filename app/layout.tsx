@@ -3,6 +3,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Spectral, Nanum_Gothic } from "next/font/google";
 
@@ -72,16 +73,22 @@ export default function RootLayout({
               </Link>
             </NavigationMenuItem>
           ))}
-          <Avatar className="ml-auto mr-2">
+
+          {/* TODO: use tooltip instead of direct link, tooltip has signin/signup or editprofile/signout */}
+          <Link className="ml-auto mr-2" href={'/auth'}>
+          <Avatar >
             <AvatarImage src={`https://gravatar.com/avatar/${userEmailHash}/?d=""`} />
             <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
-          </Avatar>
+          </Avatar></Link>
+
 
         </NavigationMenu>
         <hr></hr>
 
         {/* Childern Here */}
         {children}
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId="G-FF3G10M8KG" />
       </body>
     </html>
   );

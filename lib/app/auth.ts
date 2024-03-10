@@ -1,6 +1,8 @@
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  updateProfile,
+
 } from "firebase/auth";
 import { getFirebaseAuth } from "../firebase/auth";
 import logger from "../logger";
@@ -39,13 +41,19 @@ onAuthStateChanged(getFirebaseAuth(), (firebaseUser) => {
   logger.info(user);
 });
 
-export function createUser(email: string, password: string) {
+export function createUser(email: string, password: string, name: string = getUser().name) {
+
   const auth = getFirebaseAuth();
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       logger.info("User created!");
       logger.info(userCredential);
       console.log(userCredential);
+      if (auth.currentUser) {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+      }
 
       // TODO: Initiate db for user
     })
