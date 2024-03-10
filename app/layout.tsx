@@ -81,6 +81,7 @@ export default function RootLayout({
             <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
           </Avatar></Link>
 
+
         </NavigationMenu>
         <hr></hr>
 
