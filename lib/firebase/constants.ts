@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_APIKEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECTID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APPID
+  apiKey: "AIzaSyCepCHTMa1O7TAyWrk3y6_0rR16rmgzhvU",
+  authDomain: "spends-crimsontwilight.firebaseapp.com",
+  projectId: "spends-crimsontwilight",
+  storageBucket: "spends-crimsontwilight.appspot.com",
+  messagingSenderId: "62092747251",
+  appId: "1:62092747251:web:a51e286794ef79a18c7286"
 };
