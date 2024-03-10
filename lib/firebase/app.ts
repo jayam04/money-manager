@@ -1,5 +1,5 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
-import { firebaseConfig } from "@/lib/firebase/constants";
+import { firebaseConfig } from "@/lib/firebase/config";
 import logger from "@/lib/logger";
 
 let app: FirebaseApp;

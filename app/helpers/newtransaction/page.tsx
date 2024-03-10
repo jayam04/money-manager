@@ -8,7 +8,7 @@ import {
 } from "@/app/transactions/(archive)/getDataExample";
 import { uploadTransaction } from "@/lib/app/db";
 import { getApp } from "@/lib/firebase/app";
-import { firebaseConfig } from "@/lib/firebase/constants";
+import { firebaseConfig } from "@/lib/firebase/config";
 import { getDB } from "@/lib/firebase/firestore";
 import logger from "@/lib/logger";
 import { initializeApp } from "firebase/app";

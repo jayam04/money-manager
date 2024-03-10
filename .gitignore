@@ -38,3 +38,6 @@ next-env.d.ts
 # ides
 .idea
 .vscode
+
+# firebase config
+**/firebase/config.*
