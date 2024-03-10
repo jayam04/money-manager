@@ -72,10 +72,13 @@ export default function RootLayout({
               </Link>
             </NavigationMenuItem>
           ))}
-          <Avatar className="ml-auto mr-2">
+
+          {/* TODO: use tooltip instead of direct link, tooltip has signin/signup or editprofile/signout */}
+          <Link className="ml-auto mr-2" href={'/auth'}>
+          <Avatar >
             <AvatarImage src={`https://gravatar.com/avatar/${userEmailHash}/?d=""`} />
             <AvatarFallback>{currentUser.nameInitials}</AvatarFallback>
-          </Avatar>
+          </Avatar></Link>
 
         </NavigationMenu>
         <hr></hr>
