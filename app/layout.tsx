@@ -3,6 +3,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Spectral, Nanum_Gothic } from "next/font/google";
 
@@ -85,6 +86,8 @@ export default function RootLayout({
 
         {/* Childern Here */}
         {children}
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId="G-FF3G10M8KG" />
       </body>
     </html>
   );
